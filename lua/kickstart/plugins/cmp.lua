@@ -19,13 +19,36 @@ return {
           -- `friendly-snippets` contains a variety of premade snippets.
           --    See the README about individual language/framework/plugin snippets:
           --    https://github.com/rafamadriz/friendly-snippets
-          -- {
-          --   'rafamadriz/friendly-snippets',
-          --   config = function()
-          --     require('luasnip.loaders.from_vscode').lazy_load()
-          --   end,
-          -- },
+          { 'onsails/lspkind.nvim' },
+          {
+            'rafamadriz/friendly-snippets',
+            config = function()
+              require('luasnip.loaders.from_vscode').lazy_load()
+            end,
+          },
         },
+        config = function(_, opts)
+          if opts then
+            require('luasnip').config.setup(opts)
+          end
+          vim.tbl_map(function(type)
+            require('luasnip.loaders.from_' .. type).lazy_load()
+          end, { 'vscode', 'snipmate', 'lua' })
+          -- friendly-snippets - enable standardized comments snippets
+          require('luasnip').filetype_extend('typescript', { 'tsdoc' })
+          require('luasnip').filetype_extend('javascript', { 'jsdoc' })
+          require('luasnip').filetype_extend('lua', { 'luadoc' })
+          require('luasnip').filetype_extend('python', { 'pydoc' })
+          require('luasnip').filetype_extend('rust', { 'rustdoc' })
+          require('luasnip').filetype_extend('cs', { 'csharpdoc' })
+          require('luasnip').filetype_extend('java', { 'javadoc' })
+          require('luasnip').filetype_extend('c', { 'cdoc' })
+          require('luasnip').filetype_extend('cpp', { 'cppdoc' })
+          require('luasnip').filetype_extend('php', { 'phpdoc' })
+          require('luasnip').filetype_extend('kotlin', { 'kdoc' })
+          require('luasnip').filetype_extend('ruby', { 'rdoc' })
+          require('luasnip').filetype_extend('sh', { 'shelldoc' })
+        end,
       },
       'saadparwaiz1/cmp_luasnip',
 
@@ -41,6 +64,40 @@ return {
       local luasnip = require 'luasnip'
       luasnip.config.setup {}
 
+      local kind_icons = {
+        Text = '󰉿',
+        Method = '󰆧',
+        Function = '󰊕',
+        Constructor = '',
+        Field = '󰜢',
+        Variable = '󰀫',
+        Class = '󰠱',
+        Interface = '',
+        Module = '',
+        Property = '󰜢',
+        Unit = '󰑭',
+        Value = '󰎠',
+        Enum = '',
+        Keyword = '󰌋',
+        Snippet = '',
+        Color = '󰏘',
+        File = '󰈙',
+        Reference = '󰈇',
+        Folder = '󰉋',
+        EnumMember = '',
+        Constant = '󰏿',
+        Struct = '󰙅',
+        Event = '',
+        Operator = '󰆕',
+        TypeParameter = '',
+      }
+
+      local borderstyle = {
+        border = { '╭', '─', '╮', '│', '╯', '─', '╰', '│' },
+        winhighlight = 'Normal:CmpPmenu,CursorLine:PmenuSel,Search:None',
+      }
+
+      ---@diagnostic disable
       cmp.setup {
         snippet = {
           expand = function(args)
@@ -101,10 +158,47 @@ return {
           -- For more advanced Luasnip keymaps (e.g. selecting choice nodes, expansion) see:
           --    https://github.com/L3MON4D3/LuaSnip?tab=readme-ov-file#keymaps
         },
+        window = {
+          completion = borderstyle,
+          documentation = borderstyle,
+        },
         sources = {
           { name = 'nvim_lsp' },
           { name = 'luasnip' },
+          { name = 'nvim_lsp_signature_help' },
           { name = 'path' },
+        },
+        -- formatting = {
+        --   fields = { 'abbr', 'kind', 'menu' },
+        --   format = function(entry, vim_item)
+        --     local kind = require('lspkind').cmp_format { mode = 'symbol_text', maxwidth = 50 }(entry, vim_item)
+        --     local strings = vim.split(kind.kind, '%s', { trimempty = true })
+        --     kind.kind = ' ' .. (strings[1] or '') .. ' '
+        --     kind.menu = '  [' .. (strings[2] or '') .. ']'
+        --
+        --     return kind
+        --   end,
+        -- },
+        formatting = {
+          fields = { 'abbr', 'kind', 'menu' },
+          format = function(entry, vim_item)
+            vim_item.menu = ({
+              nvim_lsp = '[LSP]',
+              luasnip = 'Snip',
+              buffer = '[Buff]',
+              path = '[Path]',
+            })[entry.source.name]
+
+            -- for codeium
+            -- if vim_item.kind == "Codeium" then
+            --     vim_item.menu = "[󱚤 ]"
+            --     vim_item.kind = " "
+            --     return vim_item
+            -- end
+
+            vim_item.kind = string.format('%s', kind_icons[vim_item.kind])
+            return vim_item
+          end,
         },
       }
     end,
