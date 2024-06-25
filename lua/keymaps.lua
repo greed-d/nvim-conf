@@ -29,25 +29,8 @@ map('n', '<leader>tf', '<cmd>tabnew %<CR>', { desc = 'Open current buffer in new
 map('n', '<leader>sa', '<cmd>Telescope find_files follow=true no_ignore=true hidden=true<CR>', { desc = 'telescope [S]earch [A]ll files' })
 
 -- terminal
-map('t', '<C-x>', '<C-\\><C-N>', { desc = 'terminal escape terminal mode' })
 
--- map({ 'n', 'v', 'i', 't' }, '<C-b>', function()
---   local terminal = require 'nvterm.terminal'
---   local file = vim.fn.expand '%'
---   local sfile = vim.fn.expand '%:r'
---   local ft_cmds = {
---     sh = 'bash ' .. file,
---     rust = 'cargo ' .. file,
---     python = 'python3 ' .. file,
---     javascript = 'node ' .. file,
---     java = 'javac ' .. file .. ' && java ' .. sfile,
---     go = 'go build && go run ' .. file,
---     c = 'g++ ' .. file .. ' -o ' .. sfile .. ' && ./' .. sfile,
---     cpp = 'g++ ' .. file .. ' -o ' .. sfile .. ' && ./' .. sfile,
---     typescript = 'deno compile ' .. file .. ' && deno run ' .. file,
---   }
---   terminal.send(ft_cmds[vim.bo.ft], 'float')
--- end, { desc = 'Build and Run file' })
+map('t', '<C-x>', '<C-\\><C-N>', { desc = 'terminal escape terminal mode' })
 
 map({ 'n', 'v', 'i', 't' }, '<C-b>', function()
   local terminal = require 'nvterm.terminal'
@@ -90,6 +73,8 @@ map({ 'n', 't' }, '<A-i>', function()
 end, { desc = 'Show floating terminal' })
 -- Set highlight on search, but clear on pressing <Esc> in normal mode
 vim.opt.hlsearch = true
+
+map({ 'n', 'v', 't' }, '<C-n>', '<cmd>Neotree toggle<CR>', { desc = 'Toggle neo-tree' })
 
 -- Diagnostic keymaps
 vim.keymap.set('n', '[d', vim.diagnostic.goto_prev, { desc = 'Go to previous [D]iagnostic message' })
