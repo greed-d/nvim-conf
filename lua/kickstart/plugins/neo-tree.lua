@@ -10,16 +10,25 @@ return {
     'MunifTanjim/nui.nvim',
   },
   cmd = 'Neotree',
-  keys = {
-    { '\\', ':Neotree reveal<CR>', { desc = 'NeoTree reveal' } },
-  },
-  opts = {
-    filesystem = {
-      window = {
-        mappings = {
-          ['\\'] = 'close_window',
+  config = function()
+    require('neo-tree').setup {
+
+      name = { use_git_status_colors = false },
+      git_status = {
+        symbols = {
+          -- Change type
+          added = '✚', -- or "", but this is redundant info if you use git_status_colors on the name
+          modified = '', -- or "", but this is redundant info if you use git_status_colors on the name
+          deleted = '✖', -- this can only be used in the git_status source
+          renamed = '󰁕', -- this can only be used in the git_status source
+          -- Status type
+          untracked = '',
+          ignored = '',
+          unstaged = '󰄱',
+          staged = '',
+          conflict = '',
         },
       },
-    },
-  },
+    }
+  end,
 }
