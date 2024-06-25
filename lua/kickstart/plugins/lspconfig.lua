@@ -23,9 +23,10 @@ return {
       vim.lsp.handlers['textDocument/signatureHelp'] = vim.lsp.with(vim.lsp.handlers.signature_help, {
         border = 'rounded',
       })
-      vim.lsp.handlers['textDocument/diagnostics'] = vim.lsp.with(vim.lsp.handlers.diagnostics, {
-        border = 'rounded',
-      })
+
+      vim.diagnostic.config {
+        float = { border = 'rounded' },
+      }
       -- Brief aside: **What is LSP?**
       --
       -- LSP is an initialism you've probably heard, but might not understand what it is.
@@ -175,6 +176,7 @@ return {
         -- gopls = {},
         pyright = {},
         bashls = {},
+        emmet_ls = {},
         -- rust_analyzer = {},
         -- ... etc. See `:help lspconfig-all` for a list of all the pre-configured LSPs
         --
