@@ -3,6 +3,7 @@
 -- NOTE: You can change these options as you wish!
 --  For more options, you can see `:help option-list`
 local o = vim.opt
+local g = vim.g
 
 -------------------------------------- options ------------------------------------------
 vim.g.loaded_netrw = 1
@@ -40,7 +41,7 @@ o.rnu = true
 -- disable nvim intro
 vim.opt.shortmess:append 'sI'
 
-o.guifont = 'JetBrainsMono Nerd Font:h11'
+o.guifont = 'CaskaydiaCove Nerd Font:h11'
 o.signcolumn = 'yes'
 o.splitbelow = true
 o.splitright = true
@@ -57,9 +58,12 @@ o.whichwrap:append '<>[]hl'
 -- g.mapleader = " "
 
 -- disable some default providers
-vim.g['loaded_node_provider'] = 0
-vim.g['loaded_python3_provider'] = 0
-vim.g['loaded_perl_provider'] = 0
-vim.g['loaded_ruby_provider'] = 0
+g['loaded_node_provider'] = 0
+g['loaded_python3_provider'] = 0
+g['loaded_perl_provider'] = 0
+g['loaded_ruby_provider'] = 0
 
-o.guifont = 'GeistMono Nerd Font:h13'
+g.neovide_text_gamma = 0.9
+g.neovide_text_contrast = 1.1
+
+o.guifont = 'CaskaydiaMono Nerd Font:h13'
