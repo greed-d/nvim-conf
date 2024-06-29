@@ -74,7 +74,7 @@ end, { desc = 'Show floating terminal' })
 -- Set highlight on search, but clear on pressing <Esc> in normal mode
 vim.opt.hlsearch = true
 
-map({ 'n', 'v', 't' }, '<C-n>', '<cmd>Neotree toggle<CR>', { desc = 'Toggle neo-tree' })
+map({ 'n', 'v', 't' }, '\\', '<cmd>Neotree toggle<CR>', { desc = 'Toggle neo-tree' })
 
 -- Diagnostic keymaps
 vim.keymap.set('n', '[d', vim.diagnostic.goto_prev, { desc = 'Go to previous [D]iagnostic message' })
