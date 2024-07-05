@@ -3,6 +3,8 @@
 
 local map = vim.keymap.set
 
+-- NOTE: Core neovim stuff
+
 map('n', ';', ':', { desc = 'CMD enter command mode' })
 map({ 'n', 'i', 'v' }, '<A-k>', "V:m '<-2<cr>gv=gv<esc>", { desc = 'Move line up' })
 map({ 'n', 'i', 'v' }, '<A-j>', "V:m '>+1<cr>gv=gv<esc>", { desc = 'Move line down' })
@@ -16,6 +18,8 @@ map({ 'n', 'v', 't', 'x' }, '<A-.>', '<C-w>>', { desc = 'Move indent left once' 
 map('n', '<C-s>', '<cmd>w<CR>', { desc = 'file save' })
 map('n', '<C-c>', '<cmd>%y+<CR>', { desc = 'file copy whole' })
 
+-- NOTE: Buffer stuffs
+
 map({ 'n', 'v' }, '<Tab>', '<cmd>bnext<CR>', { desc = 'Move indent left once' })
 map({ 'n', 'v' }, '<S-Tab>', '<cmd>bprev<CR>', { desc = 'Move indent left once' })
 
@@ -27,8 +31,9 @@ map('n', '<leader>tp', '<cmd>tabp<CR>', { desc = 'Go to previous tab' }) --  go 
 map('n', '<leader>tf', '<cmd>tabnew %<CR>', { desc = 'Open current buffer in new tab' }) --  move current buffer to new tab
 
 map('n', '<leader>sa', '<cmd>Telescope find_files follow=true no_ignore=true hidden=true<CR>', { desc = 'telescope [S]earch [A]ll files' })
+map({ 'n', 'v', 't' }, '<leader>x', '<cmd>bdelete<CR>', { desc = 'close buffers' })
 
--- terminal
+-- NOTE: Terminal Stuff
 
 map('t', '<C-x>', '<C-\\><C-N>', { desc = 'terminal escape terminal mode' })
 
@@ -76,7 +81,8 @@ vim.opt.hlsearch = true
 
 map({ 'n', 'v', 't' }, '\\', '<cmd>Neotree toggle<CR>', { desc = 'Toggle neo-tree' })
 
--- Diagnostic keymaps
+-- NOTE: Diagnostic keymaps
+
 vim.keymap.set('n', '[d', vim.diagnostic.goto_prev, { desc = 'Go to previous [D]iagnostic message' })
 vim.keymap.set('n', ']d', vim.diagnostic.goto_next, { desc = 'Go to next [D]iagnostic message' })
 vim.keymap.set('n', '<leader>e', vim.diagnostic.open_float, { desc = 'Show diagnostic [E]rror messages' })
@@ -120,4 +126,40 @@ vim.api.nvim_create_autocmd('TextYankPost', {
   end,
 })
 
+-- Flutter tools
+map({ 'n', 'v' }, '<leader>fl', '<cmd>Telescope flutter commands<CR>', { desc = '[F][L]utter tools' })
+
+-- harpoon
+
+map('n', 'mf', function()
+  require('harpoon.mark').add_file()
+end, { desc = '[M]ark [F]ile' })
+
+map('n', 'ml', function()
+  require('harpoon.ui').toggle_quick_menu()
+end, { desc = '[M]ark [L]ist' })
+
+map('n', 'mn', function()
+  require('harpoon.ui').nav_next()
+end, { desc = 'Go to next mark' })
+
+map('n', 'mp', function()
+  require('harpoon.ui').nav_prev()
+end, { desc = 'Go to previous mark' })
+
+map('n', 'mq', function()
+  require('harpoon.ui').nav_file(1)
+end, { desc = 'Move to 1st file in list' })
+
+map('n', 'mw', function()
+  require('harpoon.ui').nav_file(2)
+end, { desc = 'Move to 2nd file in list' })
+
+map('n', 'me', function()
+  require('harpoon.ui').nav_file(3)
+end, { desc = 'Move to 3rd file in list' })
+
+map('n', 'mr', function()
+  require('harpoon.ui').nav_file(4)
+end, { desc = 'Move to 4th file in list' })
 -- vim: ts=2 sts=2 sw=2 et

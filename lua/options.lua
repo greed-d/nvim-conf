@@ -9,7 +9,7 @@ local g = vim.g
 vim.g.loaded_netrw = 1
 vim.g.loaded_netrwPlugin = 1
 
-o.laststatus = 3
+vim.go.laststatus = 3
 o.showmode = false
 
 o.clipboard = 'unnamedplus'
@@ -25,7 +25,7 @@ o.smartindent = true
 o.tabstop = 2
 o.softtabstop = 2
 
-o.winbar = '%f %m'
+-- o.winbar = '%f %m'
 
 vim.opt.fillchars = { eob = ' ' }
 o.ignorecase = true
@@ -41,7 +41,7 @@ o.rnu = true
 -- disable nvim intro
 vim.opt.shortmess:append 'sI'
 
-o.guifont = 'CaskaydiaCove Nerd Font:h11'
+o.guifont = 'CaskaydiaCove Nerd Font:h12'
 o.signcolumn = 'yes'
 o.splitbelow = true
 o.splitright = true
@@ -63,7 +63,15 @@ g['loaded_python3_provider'] = 0
 g['loaded_perl_provider'] = 0
 g['loaded_ruby_provider'] = 0
 
-g.neovide_text_gamma = 0.9
-g.neovide_text_contrast = 1.1
+-- NOTE: Neovide related settings below
 
-o.guifont = 'CaskaydiaMono Nerd Font:h13'
+g.neovide_text_gamma = 1.2
+g.neovide_text_contrast = 0.2
+
+o.guifont = 'CaskaydiaMono Nerd Font:h13.5'
+g.neovide_theme = 'tokyodark'
+g.neovide_cursor_animation_length = 0.07
+g.neovide_cursor_animate_in_insert_mode = true
+
+g.neovide_cursor_animate_command_line = true
+g.neovide_cursor_vfx_mode = 'pixiedust'
