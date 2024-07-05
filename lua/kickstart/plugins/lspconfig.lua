@@ -174,6 +174,7 @@ return {
       local servers = {
         clangd = {},
         cssls = {},
+        ruff = {},
         -- gopls = {},
         pyright = {},
         bashls = {},
