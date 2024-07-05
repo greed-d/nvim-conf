@@ -3,7 +3,7 @@ return {
   event = 'VeryLazy',
   config = function()
     require('presence').setup {
-      log_level = nil,
+      log_level = 'debug',
       main_image = 'file',
     }
   end,

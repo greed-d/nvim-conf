@@ -2,7 +2,7 @@ return {
   'nvim-lualine/lualine.nvim',
   dependencies = {
     'nvim-tree/nvim-web-devicons',
-    'meuter/lualine-so-fancy.nvim',
+    'greeid/lualine-so-fancy.nvim',
   },
   opts = {
     options = {

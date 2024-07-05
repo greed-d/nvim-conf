@@ -4,7 +4,5 @@ return {
   config = function()
     require('scope').setup { restore_state = true }
   end,
-
-  dev = true,
-  -- enabled = false,
+  enabled = false,
 }
