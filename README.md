@@ -39,7 +39,7 @@ Built my config on `kickstart.nvim`, added new plugins, keymaps and options to b
 
 ### Per tab buffers :  
 
-![per_tab_buf](./.screenshots/per_tab_buf.gif) 
+![per_tab_buf](./.screenshots/per_tab_buf.mp4) 
 
 > [!NOTE]
 > More plugins are added but not mentioned in README
