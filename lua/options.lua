@@ -64,7 +64,8 @@ g['loaded_perl_provider'] = 0
 g['loaded_ruby_provider'] = 0
 
 -- NOTE: Neovide related settings below
-
+-- [[Neovide go brr]]
+-- BUG: text gamma and text contrast changed to fix separated glyphs
 g.neovide_text_gamma = 1.2
 g.neovide_text_contrast = 0.2
 

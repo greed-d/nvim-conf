@@ -129,7 +129,7 @@ vim.api.nvim_create_autocmd('TextYankPost', {
 -- Flutter tools
 map({ 'n', 'v' }, '<leader>fl', '<cmd>Telescope flutter commands<CR>', { desc = '[F][L]utter tools' })
 
--- harpoon
+-- NOTE: harpoon
 
 map('n', 'mf', function()
   require('harpoon.mark').add_file()
@@ -147,19 +147,19 @@ map('n', 'mp', function()
   require('harpoon.ui').nav_prev()
 end, { desc = 'Go to previous mark' })
 
-map('n', 'mq', function()
+map('n', 'me', function()
   require('harpoon.ui').nav_file(1)
 end, { desc = 'Move to 1st file in list' })
 
-map('n', 'mw', function()
+map('n', 'mr', function()
   require('harpoon.ui').nav_file(2)
 end, { desc = 'Move to 2nd file in list' })
 
-map('n', 'me', function()
+map('n', 'mv', function()
   require('harpoon.ui').nav_file(3)
 end, { desc = 'Move to 3rd file in list' })
 
-map('n', 'mr', function()
+map('n', 'mb', function()
   require('harpoon.ui').nav_file(4)
 end, { desc = 'Move to 4th file in list' })
 -- vim: ts=2 sts=2 sw=2 et
