@@ -1,1 +1,6 @@
-return { 'mistricky/codesnap.nvim', build = 'make', config = true }
+return {
+  'mistricky/codesnap.nvim',
+  cmd = 'CodeSnap',
+  build = 'make',
+  config = true,
+}

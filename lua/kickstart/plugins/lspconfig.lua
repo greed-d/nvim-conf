@@ -13,8 +13,9 @@ return {
 
       -- `neodev` configures Lua LSP for your Neovim config, runtime and plugins
       -- used for completion, annotations and signatures of Neovim apis
-      { 'folke/neodev.nvim', opts = {} },
+      -- { 'folke/neodev.nvim', opts = {} },
     },
+    event = 'VeryLazy',
     config = function()
       -- vim.lsp.handlers['textDocument/hover'] = vim.lsp.with(vim.lsp.handlers.hover, {
       --   border = 'rounded',
@@ -22,20 +23,20 @@ return {
 
       --
 
-      vim.lsp.handlers['textDocument/hover'] = vim.lsp.with(vim.lsp.handlers.hover, {
-        -- Use a sharp border with `FloatBorder` highlights
-        border = 'rounded',
-        -- add the title in hover float window
-        title = 'hover',
-      })
-
-      vim.lsp.handlers['textDocument/signatureHelp'] = vim.lsp.with(vim.lsp.handlers.signature_help, {
-        border = 'rounded',
-      })
-
-      vim.diagnostic.config {
-        float = { border = 'rounded' },
-      }
+      -- vim.lsp.handlers['textDocument/hover'] = vim.lsp.with(vim.lsp.handlers.hover, {
+      --   -- Use a sharp border with `FloatBorder` highlights
+      --   border = 'rounded',
+      --   -- add the title in hover float window
+      --   title = 'hover',
+      -- })
+      --
+      -- vim.lsp.handlers['textDocument/signatureHelp'] = vim.lsp.with(vim.lsp.handlers.signature_help, {
+      --   border = 'rounded',
+      -- })
+      --
+      -- vim.diagnostic.config {
+      --   float = { border = 'rounded' },
+      -- }
       -- Brief aside: **What is LSP?**
       --
       -- LSP is an initialism you've probably heard, but might not understand what it is.
@@ -184,7 +185,6 @@ return {
         clangd = {},
         cssls = {},
         ruff = {},
-        -- gopls = {},
         pyright = {},
         bashls = {},
         emmet_ls = {},

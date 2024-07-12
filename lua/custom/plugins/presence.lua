@@ -1,6 +1,6 @@
 return {
   'andweeb/presence.nvim',
-  event = 'VeryLazy',
+  event = 'BufReadPost',
   config = function()
     require('presence').setup {
       log_level = nil,

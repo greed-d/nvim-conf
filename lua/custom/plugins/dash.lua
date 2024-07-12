@@ -1,7 +1,8 @@
 return {
-  'startup-nvim/startup.nvim',
-  requires = { 'nvim-telescope/telescope.nvim', 'nvim-lua/plenary.nvim' },
+  'nvimdev/dashboard-nvim',
+  event = 'VimEnter',
   config = function()
-    require('startup').setup { theme = 'evil' }
+    require('dashboard').setup {}
   end,
+  dependencies = { { 'nvim-tree/nvim-web-devicons' } },
 }

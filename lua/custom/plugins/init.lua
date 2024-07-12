@@ -4,6 +4,7 @@
 -- See the kickstart.nvim README for more information
 return {
   'max397574/better-escape.nvim',
+  event = 'BufReadPost',
   config = function()
     require('better_escape').setup()
   end,

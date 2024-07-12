@@ -1,8 +1,9 @@
 return {
   'nvim-lualine/lualine.nvim',
+  event = 'BufReadPre',
   dependencies = {
     'nvim-tree/nvim-web-devicons',
-    'greeid/lualine-so-fancy.nvim',
+    { 'greeid/lualine-so-fancy.nvim' },
   },
   opts = {
     options = {
