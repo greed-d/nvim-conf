@@ -10,7 +10,7 @@ Built my config on `kickstart.nvim`, added new plugins, keymaps and options to b
 
 [Startup](https://github.com/startup-nvim/startup.nvim) [ For dashboard when opening neovim ] 
 
-[Flash](https://github.com/folke/flash.nvim) [ To jump to a word in open buffer ]
+[Flash](https://github.com/folke/flash.nvim) [ To jump to a word in open buffer ] 
 
 [Harpoon](https://github.com/Theprimeagen/harpoon) [ To jump between files in open workspaces ] 
 
@@ -18,17 +18,17 @@ Built my config on `kickstart.nvim`, added new plugins, keymaps and options to b
 
 [Noice](https://github.com/folke/noice.nvim) [ For floating commandline ] 
 
-[NvTerm](https://github.com/NvChad/nvterm) [ For terminals ]
+[NvTerm](https://github.com/NvChad/nvterm) [ For terminals ] 
 
-[Oil](https://github.com/stevearc/oil.nvim) [ To edit file tree like buffer ]
+[Oil](https://github.com/stevearc/oil.nvim) [ To edit file tree like buffer ] 
 
-[Bufferline](https://github.com/akinsho/bufferline.nvim) [ To view open buffers ]
+[Bufferline](https://github.com/akinsho/bufferline.nvim) [ To view open buffers ] 
 
 [Tabscope](https://github.com/backdround/tabscobe.nvim) [ For per tab buffer system ]
 
 ## Screenshots
 
-### Dashboard :
+### Dashboard : 
 
 ![dashboard](./.screenshots/dashboard.png) 
 
