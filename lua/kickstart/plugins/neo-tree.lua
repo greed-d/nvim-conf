@@ -14,6 +14,9 @@ return {
     require('neo-tree').setup {
 
       name = { use_git_status_colors = false },
+      window = {
+        position = 'right',
+      },
       git_status = {
         symbols = {
           -- Change type
