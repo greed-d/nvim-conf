@@ -1,48 +1,90 @@
-# My nvim config (built upon `kickstart.nvim`)
 
-Built my config on `kickstart.nvim`, added new plugins, keymaps and options to better fit my workflow and usecase
+### Install Recipes
 
-## Plugins added : 
+Below you can find OS specific install instructions for Neovim and dependencies.
 
-[Barbecue](https://github.com/utilyre/barbecue.nvim) [ VSCode like winbar of neovim ]
+After installing all the dependencies continue with the [Install Kickstart](#Install-Kickstart) step.
 
-[CodeSnap](https://github.com/mistricky/codesnap.nvim) [ To snap highlighted code ]
+#### Windows Installation
 
-[Startup](https://github.com/startup-nvim/startup.nvim) [ For dashboard when opening neovim ] 
+<details><summary>Windows with Microsoft C++ Build Tools and CMake</summary>
+Installation may require installing build tools and updating the run command for `telescope-fzf-native`
 
-[Flash](https://github.com/folke/flash.nvim) [ To jump to a word in open buffer ] 
+See `telescope-fzf-native` documentation for [more details](https://github.com/nvim-telescope/telescope-fzf-native.nvim#installation)
 
-[Harpoon](https://github.com/Theprimeagen/harpoon) [ To jump between files in open workspaces ] 
+This requires:
 
-[Lualine](https://github.com/nvim-lualine/lualine.nvim) [ For pretty lualine (Depends on [Lualine so Fancy](https://github.com/greeid/lualine-so-fancy)) ] 
+- Install CMake and the Microsoft C++ Build Tools on Windows
 
-[Noice](https://github.com/folke/noice.nvim) [ For floating commandline ] 
+```lua
+{'nvim-telescope/telescope-fzf-native.nvim', build = 'cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release && cmake --install build --prefix build' }
+```
+</details>
+<details><summary>Windows with gcc/make using chocolatey</summary>
+Alternatively, one can install gcc and make which don't require changing the config,
+the easiest way is to use choco:
 
-[NvTerm](https://github.com/NvChad/nvterm) [ For terminals ] 
+1. install [chocolatey](https://chocolatey.org/install)
+either follow the instructions on the page or use winget,
+run in cmd as **admin**:
+```
+winget install --accept-source-agreements chocolatey.chocolatey
+```
 
-[Oil](https://github.com/stevearc/oil.nvim) [ To edit file tree like buffer ] 
+2. install all requirements using choco, exit previous cmd and
+open a new one so that choco path is set, and run in cmd as **admin**:
+```
+choco install -y neovim git ripgrep wget fd unzip gzip mingw make
+```
+</details>
+<details><summary>WSL (Windows Subsystem for Linux)</summary>
 
-[Bufferline](https://github.com/akinsho/bufferline.nvim) [ To view open buffers ] 
+```
+wsl --install
+wsl
+sudo add-apt-repository ppa:neovim-ppa/unstable -y
+sudo apt update
+sudo apt install make gcc ripgrep unzip git xclip neovim
+```
+</details>
 
-[Tabscope](https://github.com/backdround/tabscobe.nvim) [ For per tab buffer system ]
+#### Linux Install
+<details><summary>Ubuntu Install Steps</summary>
 
-## Screenshots
+```
+sudo add-apt-repository ppa:neovim-ppa/unstable -y
+sudo apt update
+sudo apt install make gcc ripgrep unzip git xclip neovim
+```
+</details>
+<details><summary>Debian Install Steps</summary>
 
-### Dashboard : 
+```
+sudo apt update
+sudo apt install make gcc ripgrep unzip git xclip curl
 
-![dashboard](./.screenshots/dashboard.png) 
+# Now we install nvim
+curl -LO https://github.com/neovim/neovim/releases/latest/download/nvim-linux64.tar.gz
+sudo rm -rf /opt/nvim-linux64
+sudo mkdir -p /opt/nvim-linux64
+sudo chmod a+rX /opt/nvim-linux64
+sudo tar -C /opt -xzf nvim-linux64.tar.gz
 
+# make it available in /usr/local/bin, distro installs to /usr/bin
+sudo ln -sf /opt/nvim-linux64/bin/nvim /usr/local/bin/
+```
+</details>
+<details><summary>Fedora Install Steps</summary>
 
-### Other stuffs : 
+```
+sudo dnf install -y gcc make git ripgrep fd-find unzip neovim
+```
+</details>
 
-![other_stuff](./.screenshots/other_stuff.png) 
+<details><summary>Arch Install Steps</summary>
 
-### Per tab buffers :  
+```
+sudo pacman -S --noconfirm --needed gcc make git ripgrep fd unzip neovim
+```
+</details>
 
-![per_tab_buf](./.screenshots/per_tab_buf.mp4) 
-
-> [!NOTE]
-> More plugins are added but not mentioned in README
-
-> [!IMPORTANT]
-> Please take this only as reference, I always suggest building your own config for more control over it
