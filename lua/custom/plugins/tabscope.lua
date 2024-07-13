@@ -1,6 +1,6 @@
 return {
   'backdround/tabscope.nvim',
-  event = 'VeryLazy',
+  event = 'BufReadPre',
   config = true,
   -- enabled = false,
 }

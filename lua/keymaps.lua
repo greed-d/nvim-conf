@@ -32,7 +32,6 @@ map('n', '<leader>tf', '<cmd>tabnew %<CR>', { desc = 'Open current buffer in new
 
 map('n', '<leader>sa', '<cmd>Telescope find_files follow=true no_ignore=true hidden=true<CR>', { desc = 'telescope [S]earch [A]ll files' })
 map({ 'n', 'v', 't' }, '<leader>x', '<cmd>bdelete<CR>', { desc = 'close buffers' })
-map({ 'n', 'v', 't' }, '<leader>o', '<cmd>Oil<CR>', { desc = 'Open oil.nvim' })
 
 -- NOTE: Terminal Stuff
 

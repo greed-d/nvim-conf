@@ -1,9 +1,9 @@
 return {
   'andweeb/presence.nvim',
-  event = 'BufReadPost',
+  event = 'BufReadPre',
   config = function()
     require('presence').setup {
-      log_level = nil,
+      log_level = 'debug',
       main_image = 'neovim',
 
       -- NOTE: Rich presence text options
