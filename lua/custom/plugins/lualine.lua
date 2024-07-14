@@ -1,8 +1,9 @@
 return {
   'nvim-lualine/lualine.nvim',
+
   dependencies = {
     'nvim-tree/nvim-web-devicons',
-    'greeid/lualine-so-fancy.nvim',
+    { 'greeid/lualine-so-fancy.nvim', dev = true, { dir = '~/Dev/hobby_projects/nvim_plugins/lualine-so-fancy.nvim/' } },
   },
   -- event = 'VeryLazy',
   init = function()
@@ -49,10 +50,15 @@ return {
         { 'fancy_macro' },
         {
           'fancy_diagnostics',
+          diagnostics_color = {
+            error = { fg = '#ee6d85' },
+          },
           symbols = { error = ' ', warn = ' ', info = '󰋼 ', hint = '󰛩 ' },
         },
         { 'fancy_searchcount' },
-        { 'fancy_location' },
+        {
+          'fancy_location',
+        },
       },
       lualine_y = {
         { 'fancy_lsp_servers' },
