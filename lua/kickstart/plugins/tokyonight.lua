@@ -8,6 +8,13 @@ return {
     vim.cmd [[colorscheme tokyodark]]
 
     -- WARN: Change after changing colorscheme
-    vim.api.nvim_set_hl(0, 'CursorLineNr', { fg = '#f09054' })
+    vim.api.nvim_set_hl(0, 'CursorLineNr', { bold = true, fg = '#f09054' })
   end,
 }
+
+-- return {
+--   'folke/tokyonight.nvim',
+--   lazy = false,
+--   priority = 1000,
+--   opts = {},
+-- }
