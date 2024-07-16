@@ -46,5 +46,12 @@ return {
       end,
       desc = 'Move to 4th file in list',
     },
+    {
+      'mt',
+      function()
+        require('harpoon.ui').nav_file(5)
+      end,
+      desc = 'Move to 5th file in the list',
+    },
   },
 }
