@@ -9,10 +9,11 @@ local g = vim.g
 vim.g.loaded_netrw = 1
 vim.g.loaded_netrwPlugin = 1
 
-vim.go.laststatus = 3
+vim.g.laststatus = 3
 o.showmode = false
+o.scrolloff = 18
 
-o.clipboard = 'unnamedplus'
+-- o.clipboard = 'unnamedplus'
 o.cursorline = true
 o.cursorlineopt = 'both'
 
@@ -41,7 +42,6 @@ o.rnu = true
 -- disable nvim intro
 vim.opt.shortmess:append 'sI'
 
-o.guifont = 'CaskaydiaCove Nerd Font:h12'
 o.signcolumn = 'yes'
 o.splitbelow = true
 o.splitright = true
@@ -68,7 +68,7 @@ g['loaded_ruby_provider'] = 0
 g.neovide_text_gamma = 1.2
 g.neovide_text_contrast = 0.2
 
-o.guifont = 'CaskaydiaMono Nerd Font:h13.5'
+o.guifont = 'JetBrainsMono Nerd Font:h12'
 g.neovide_theme = 'tokyodark'
 g.neovide_cursor_animation_length = 0.07
 g.neovide_cursor_animate_in_insert_mode = true
