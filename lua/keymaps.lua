@@ -3,17 +3,26 @@
 
 local map = vim.keymap.set
 
--- NOTE: Core neovim stuff
-
-map('n', ';', ':', { desc = 'CMD enter command mode' })
-map({ 'n', 'i', 'v' }, '<A-k>', "V:m '<-2<cr>gv=gv<esc>", { desc = 'Move line up' })
-map({ 'n', 'i', 'v' }, '<A-j>', "V:m '>+1<cr>gv=gv<esc>", { desc = 'Move line down' })
+-- map('n', ';', ':', { desc = 'CMD enter command mode' })
+map('n', '<A-j>', '<cmd>m .+1<cr>==', { desc = 'Move Down' })
+map('n', '<A-k>', '<cmd>m .-2<cr>==', { desc = 'Move Up' })
+map('i', '<A-j>', '<esc><cmd>m .+1<cr>==gi', { desc = 'Move Down' })
+map('i', '<A-k>', '<esc><cmd>m .-2<cr>==gi', { desc = 'Move Up' })
+map('v', '<A-j>', ":m '>+1<cr>gv=gv", { desc = 'Move Down' })
+map('v', '<A-k>', ":m '<-2<cr>gv=gv", { desc = 'Move Up' })
 map({ 'n', 'v', 'x' }, '<S-h>', '^', { desc = 'Move to front of line' })
 map({ 'n', 'v', 'x' }, '<S-l>', '$', { desc = 'Move to end of line' })
 map({ 'n', 'v' }, '<', '<gv', { desc = 'Move indent left once' })
 map({ 'n', 'v' }, '>', '>gv', { desc = 'Move indent left once' })
 map({ 'n', 'v', 't', 'x' }, '<A-,>', '<C-w><', { desc = 'Decrease window size' })
 map({ 'n', 'v', 't', 'x' }, '<A-.>', '<C-w>>', { desc = 'Move indent left once' })
+map({ 'n', 'v', 'x' }, '<leader>y', '"+y', { noremap = true, silent = true, desc = 'Yank to clipboard' })
+map({ 'n', 'v', 'x' }, '<leader>Y', '"+yy', { noremap = true, silent = true, desc = 'Yank line to clipboard' })
+map({ 'n', 'v', 'x' }, '<leader>p', '"+p', { noremap = true, silent = true, desc = 'Paste from clipboard' })
+map({ 'n', 'x' }, 'j', "v:count == 0 ? 'gj' : 'j'", { desc = 'Down', expr = true, silent = true })
+map({ 'n', 'x' }, 'k', "v:count == 0 ? 'gk' : 'k'", { desc = 'Up', expr = true, silent = true })
+map('v', '<', '<gv')
+map('v', '>', '>gv')
 
 map('n', '<C-s>', '<cmd>w<CR>', { desc = 'file save' })
 map('n', '<C-c>', '<cmd>%y+<CR>', { desc = 'file copy whole' })
@@ -22,6 +31,7 @@ map('n', '<C-c>', '<cmd>%y+<CR>', { desc = 'file copy whole' })
 
 map({ 'n', 'v' }, '<Tab>', '<cmd>BufferLineCycleNext<CR>', { desc = 'Move indent left once' })
 map({ 'n', 'v' }, '<S-Tab>', '<cmd>BufferLineCyclePrev<CR>', { desc = 'Move indent left once' })
+map('n', '<leader>b', '<cmd>enew<CR>', { desc = 'buffer new' })
 
 map('n', '<Esc>', '<cmd>nohlsearch<CR>')
 map('n', '<leader>to', '<cmd>tabnew<CR>', { desc = 'Open new tab' }) -- open new tab
