@@ -250,9 +250,9 @@ return {
             local kind = require('lspkind').cmp_format { mode = 'text', maxwidth = 50 }(entry, vim_item)
             local strings = vim.split(kind.kind, ' ', { trimempty = true })
             kind.kind = string.format('%s  %s', kind_icons[vim_item.kind], strings[1]) -- This concatenates the icons with the name of the item kind
-            kind.menu = '' .. (strings[2] or '') .. ''
 
-            -- NOTE: Set icon color for kind.menu
+            -- NOTE: Don't remove the line below if you don't want the CMP to go haywire
+            kind.menu = '' .. (strings[2] or '') .. ''
 
             return kind
           end,
