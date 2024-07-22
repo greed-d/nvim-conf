@@ -1,5 +1,7 @@
 return {
-  'tiagovla/tokyodark.nvim',
+  'greeid/tokyodark.nvim',
+  dev = true,
+  dir = '~/Dev/hobby_projects/nvim_plugins/tokyodark.nvim/',
   opts = {
     -- custom options here
   },

@@ -9,6 +9,7 @@ return {
   { -- Fuzzy Finder (files, lsp, etc)
     'nvim-telescope/telescope.nvim',
     branch = '0.1.x',
+    -- event = 'VeryLazy',
     keys = {
       { '<leader>sh', '<cmd>Telescope help_tags<cr>', desc = '[S]earch [H]elp' },
       { '<leader>sk', '<cmd>Telescope keymaps<cr>', desc = '[S]earch [K]eymaps' },
@@ -40,13 +41,13 @@ return {
         end,
         desc = '[S]earch [/] in Open Files',
       },
-    {
-      '<leader>sn',
-      function()
-        require('telescope.builtin').find_files { cwd = vim.fn.stdpath 'config' }
-      end,
-      desc = '[S]earch [N]eovim files',
-    },
+      {
+        '<leader>sn',
+        function()
+          require('telescope.builtin').find_files { cwd = vim.fn.stdpath 'config' }
+        end,
+        desc = '[S]earch [N]eovim files',
+      },
     },
 
     dependencies = {

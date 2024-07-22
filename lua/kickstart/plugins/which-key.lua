@@ -20,24 +20,28 @@ return {
     opts = {
       preset = 'helix',
     },
+    enabled = false,
     config = function() -- This is the function that runs, AFTER loading
       require('which-key').setup()
 
       -- Document existing key chains
-      require('which-key').register {
+      -- Document existing key chains
+      require('which-key').add {
         ['<leader>c'] = { name = '[C]ode', _ = 'which_key_ignore' },
+        { '<leader>c', group = '[C]ode' },
         ['<leader>d'] = { name = '[D]ocument', _ = 'which_key_ignore' },
-        ['m'] = { name = 'Harpoon', _ = 'which_key_ignore' },
+        { '<leader>d', group = '[D]ocument' },
         ['<leader>r'] = { name = '[R]ename', _ = 'which_key_ignore' },
+        { '<leader>r', group = '[R]ename' },
         ['<leader>s'] = { name = '[S]earch', _ = 'which_key_ignore' },
+        { '<leader>s', group = '[S]earch' },
         ['<leader>w'] = { name = '[W]orkspace', _ = 'which_key_ignore' },
+        { '<leader>w', group = '[W]orkspace' },
         ['<leader>t'] = { name = '[T]oggle', _ = 'which_key_ignore' },
+        { '<leader>t', group = '[T]oggle' },
         ['<leader>h'] = { name = 'Git [H]unk', _ = 'which_key_ignore' },
+        { '<leader>h', group = 'Git [H]unk', mode = { 'n', 'v' } },
       }
-      -- visual mode
-      require('which-key').register({
-        ['<leader>h'] = { 'Git [H]unk' },
-      }, { mode = 'v' })
     end,
   },
 }
