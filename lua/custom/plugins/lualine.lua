@@ -5,7 +5,7 @@ return {
     'nvim-tree/nvim-web-devicons',
     { 'greeid/lualine-so-fancy.nvim', dev = true, { dir = '~/Dev/hobby_projects/nvim_plugins/lualine-so-fancy.nvim/' } },
   },
-  -- event = 'VeryLazy',
+  event = 'VeryLazy',
   init = function()
     vim.g.lualine_laststatus = vim.o.laststatus
     if vim.fn.argc(-1) > 0 then
@@ -28,7 +28,7 @@ return {
     },
     sections = {
       lualine_a = {
-        { 'mode', width = 3 },
+        { 'fancy_mode', icon_enabled = true },
       },
       lualine_b = {
         function()
@@ -47,7 +47,6 @@ return {
         },
       },
       lualine_x = {
-        { 'fancy_macro' },
         {
           'fancy_diagnostics',
           diagnostics_color = {
@@ -55,19 +54,23 @@ return {
           },
           symbols = { error = ' ', warn = ' ', info = '󰋼 ', hint = '󰛩 ' },
         },
+        { 'fancy_lsp_servers' },
+      },
+      lualine_y = {
+        { 'fancy_macro' },
+
         { 'fancy_searchcount' },
         {
           'fancy_location',
         },
       },
-      lualine_y = {
-        { 'fancy_lsp_servers' },
-      },
       lualine_z = {
-        function()
-          local cwd = vim.fn.getcwd()
-          return '󰉖 ' .. (cwd:match '([^/\\]+)[/\\]*$' or cwd)
-        end,
+        { 'fancy_cwd', fg = '', bg = '#474853' },
+
+        -- function()
+        --   local cwd = vim.fn.getcwd()
+        --   return '󰉖 ' .. (cwd:match '([^/\\]+)[/\\]*$' or cwd)
+        -- end,
       },
     },
   },
