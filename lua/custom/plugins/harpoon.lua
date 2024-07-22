@@ -1,7 +1,8 @@
 return {
   'Theprimeagen/harpoon',
   config = true,
-  event = 'BufReadPre',
+  -- event = 'BufRead',
+
   keys = {
     {
       'mf',
