@@ -15,7 +15,7 @@
 -- }
 return {
   'nvimdev/indentmini.nvim',
-  event = 'User FilePost',
+  event = 'BufRead',
   config = function()
     require('indentmini').setup {
       char = '│',

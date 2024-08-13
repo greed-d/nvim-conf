@@ -13,10 +13,22 @@ return {
     vim.api.nvim_set_hl(0, 'CursorLineNr', { bold = true, fg = '#f09054' })
   end,
 }
-
+--
 -- return {
 --   'folke/tokyonight.nvim',
 --   lazy = false,
 --   priority = 1000,
 --   opts = {},
+-- }
+-- Using lazy.nvim
+-- return {
+--   'ribru17/bamboo.nvim',
+--   lazy = false,
+--   priority = 1000,
+--   config = function()
+--     require('bamboo').setup {
+--       -- optional configuration here
+--     }
+--     require('bamboo').load()
+--   end,
 -- }

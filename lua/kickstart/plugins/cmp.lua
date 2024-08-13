@@ -202,6 +202,10 @@ return {
           { name = 'nvim_lsp_signature_help' },
           { name = 'buffer' },
           { name = 'path' },
+          { name = 'nvlime' },
+          { name = 'conjure' },
+          { name = 'neorg' },
+          { name = 'lazydev' },
         },
 
         cmp_hl('CmpItemKindConstant', 'NONE', base16.base09),

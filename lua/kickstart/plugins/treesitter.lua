@@ -1,10 +1,10 @@
 return {
   { -- Highlight, edit, and navigate code
     'nvim-treesitter/nvim-treesitter',
-    event = 'LspAttach',
+    event = 'VeryLazy',
     build = ':TSUpdate',
     opts = {
-      ensure_installed = { 'java', 'bash', 'c', 'diff', 'html', 'lua', 'luadoc', 'markdown', 'vim', 'vimdoc' },
+      ensure_installed = { 'java', 'bash', 'c', 'diff', 'html', 'lua', 'luadoc', 'markdown', 'vim', 'vimdoc', 'commonlisp', 'python' },
       -- Autoinstall languages that are not installed
       auto_install = true,
       highlight = {
