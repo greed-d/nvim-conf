@@ -23,6 +23,7 @@ map({ 'n', 'x' }, 'j', "v:count == 0 ? 'gj' : 'j'", { desc = 'Down', expr = true
 map({ 'n', 'x' }, 'k', "v:count == 0 ? 'gk' : 'k'", { desc = 'Up', expr = true, silent = true })
 map('v', '<', '<gv')
 map('v', '>', '>gv')
+map('x', 'p', 'p:let @"=@0<CR>', { silent = true })
 
 map('n', '<C-s>', '<cmd>w<CR>', { desc = 'file save' })
 map('n', '<C-c>', '<cmd>%y+<CR>', { desc = 'file copy whole' })
@@ -42,13 +43,13 @@ map('n', '<leader>tf', '<cmd>tabnew %<CR>', { desc = 'Open current buffer in new
 
 map('n', '<leader>sa', '<cmd>Telescope find_files follow=true no_ignore=true hidden=true<CR>', { desc = 'telescope [S]earch [A]ll files' })
 map('n', '<leader>o', '<cmd>Oil<CR>', { desc = 'Toggle [O]il' })
-map('n', '<leader>x', '<cmd>bdelete<CR>', { desc = 'close buffers' })
+map('n', '<leader>bk', '<cmd>bdelete<CR>', { desc = 'close buffers' })
 
 -- NOTE: Terminal Stuff
 
 map('t', '<C-x>', '<C-\\><C-N>', { desc = 'terminal escape terminal mode' })
 
-map({ 'n', 'v', 'i', 't' }, '<C-b>', function()
+map({ 'n', 'v', 'i', 't' }, '<M-b>', function()
   local terminal = require 'nvterm.terminal'
   local file = vim.fn.expand '%'
   local sfile = vim.fn.expand '%:r'
@@ -118,10 +119,10 @@ vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist, { desc = 'Open diagn
 --  Use CTRL+<hjkl> to switch between windows
 --
 --  See `:help wincmd` for a list of all window commands
-vim.keymap.set('n', '<C-h>', '<C-w><C-h>', { desc = 'Move focus to the left window' })
-vim.keymap.set('n', '<C-l>', '<C-w><C-l>', { desc = 'Move focus to the right window' })
-vim.keymap.set('n', '<C-j>', '<C-w><C-j>', { desc = 'Move focus to the lower window' })
-vim.keymap.set('n', '<C-k>', '<C-w><C-k>', { desc = 'Move focus to the upper window' })
+-- vim.keymap.set('n', '<C-h>', '<C-w><C-h>', { desc = 'Move focus to the left window' })
+-- vim.keymap.set('n', '<C-l>', '<C-w><C-l>', { desc = 'Move focus to the right window' })
+-- vim.keymap.set('n', '<C-j>', '<C-w><C-j>', { desc = 'Move focus to the lower window' })
+-- vim.keymap.set('n', '<C-k>', '<C-w><C-k>', { desc = 'Move focus to the upper window' })
 
 -- [[ Basic Autocommands ]]
 --  See `:help lua-guide-autocommands`
@@ -139,5 +140,8 @@ vim.api.nvim_create_autocmd('TextYankPost', {
 
 -- Flutter tools
 map({ 'n', 'v' }, '<leader>fl', '<cmd>Telescope flutter commands<CR>', { desc = '[F][L]utter tools' })
+
+-- NOTE: Undotree
+map('n', '<leader>u', '<cmd>UndotreeToggle<CR>', { desc = '[U]ndo Tree Toggle' })
 
 -- vim: ts=2 sts=2 sw=2 et
