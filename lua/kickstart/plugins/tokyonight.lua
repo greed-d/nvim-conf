@@ -12,6 +12,7 @@ return {
     -- WARN: Change after changing colorscheme
     vim.api.nvim_set_hl(0, 'CursorLineNr', { bold = true, fg = '#f09054' })
   end,
+  enabled = false,
 }
 --
 -- return {

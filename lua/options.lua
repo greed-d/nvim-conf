@@ -12,6 +12,7 @@ vim.g.loaded_netrwPlugin = 1
 vim.g.laststatus = 3
 o.showmode = false
 o.scrolloff = 18
+o.background = 'dark'
 
 -- o.clipboard = 'unnamedplus'
 o.cursorline = true
