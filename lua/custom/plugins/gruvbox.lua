@@ -2,6 +2,7 @@ return {
   'sainnhe/gruvbox-material',
   lazy = false,
   priority = 1000,
+  enabled = false,
   config = function()
     -- Optionally configure and load the colorscheme
     -- directly inside the plugin declaration.
@@ -12,3 +13,6 @@ return {
     vim.api.nvim_set_hl(0, 'Normal', { bg = '#1e2122' })
   end,
 }
+-- return { "catppuccin/nvim", name = "catppuccin", priority = 1000, config = function()
+--   vim.cmd.colorscheme 'catppuccin-mocha'
+-- end }

@@ -31,6 +31,8 @@ return {
         javascript = { 'prettierd' },
         typescript = { 'prettierd' },
         python = { 'black' },
+        bash = { 'shfmt' },
+        nix = { 'nixfmt' },
         -- Conform can also run multiple formatters sequentially
         -- python = { "isort", "black" },
         --

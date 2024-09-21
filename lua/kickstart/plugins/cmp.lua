@@ -119,14 +119,14 @@ return {
           --    https://github.com/L3MON4D3/LuaSnip?tab=readme-ov-file#keymaps
         },
 
-        vim.api.nvim_set_hl(0, 'CmpItemAbbr', { fg = '#c7b89d' }),
-        vim.api.nvim_set_hl(0, 'CmpItemAbbrMatch', { fg = '#7199ee', bold = true }),
-        vim.api.nvim_set_hl(0, 'CmpDoc', { fg = '#c7b89d' }),
-        vim.api.nvim_set_hl(0, 'CmpDocBorder', { bg = 'NONE', fg = '#c7b89d' }),
-        vim.api.nvim_set_hl(0, 'CmpBorder', { bg = 'NONE', fg = '#c7b89d' }),
-        vim.api.nvim_set_hl(0, 'CmpPmenu', { fg = '#1e2122' }),
-        vim.api.nvim_set_hl(0, 'CmpSel', { fg = '#1e2122', bg = '#7fa679' }),
-        vim.api.nvim_set_hl(0, 'CmpItemAbbrMatchFuzzy', { link = 'CmpItemAbbrMatch' }),
+        -- vim.api.nvim_set_hl(0, 'CmpItemAbbr', { fg = '#c7b89d' }),
+        -- vim.api.nvim_set_hl(0, 'CmpItemAbbrMatch', { fg = '#7199ee', bold = true }),
+        -- vim.api.nvim_set_hl(0, 'CmpDoc', { fg = '#c7b89d' }),
+        -- vim.api.nvim_set_hl(0, 'CmpDocBorder', { bg = 'NONE', fg = '#c7b89d' }),
+        -- vim.api.nvim_set_hl(0, 'CmpBorder', { bg = 'NONE', fg = '#c7b89d' }),
+        -- vim.api.nvim_set_hl(0, 'CmpPmenu', { fg = '#1e2122' }),
+        vim.api.nvim_set_hl(0, 'CmpSel', {  bg = '#45475a' }),
+        -- vim.api.nvim_set_hl(0, 'CmpItemAbbrMatchFuzzy', { link = 'CmpItemAbbrMatch' }),
 
         -- window = {
         --   completion = {

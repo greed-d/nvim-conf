@@ -163,9 +163,10 @@ return {
       local servers = {
         clangd = {},
         cssls = {},
+        nil_ls = {},
         ruff = {},
         jdtls = {},
-        tsserver = {},
+        ts_ls = {},
         -- gopls = {},
         pyright = {},
         bashls = {},

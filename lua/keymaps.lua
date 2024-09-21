@@ -21,8 +21,8 @@ map({ 'n', 'v', 'x' }, '<leader>Y', '"+yy', { noremap = true, silent = true, des
 map({ 'n', 'v', 'x' }, '<leader>p', '"+p', { noremap = true, silent = true, desc = 'Paste from clipboard' })
 map({ 'n', 'x' }, 'j', "v:count == 0 ? 'gj' : 'j'", { desc = 'Down', expr = true, silent = true })
 map({ 'n', 'x' }, 'k', "v:count == 0 ? 'gk' : 'k'", { desc = 'Up', expr = true, silent = true })
-map('v', '<', '<gv')
-map('v', '>', '>gv')
+map({'v', 'n'}, '<', '<gv')
+map({'v', 'n'}, '>', '>gv')
 map('x', 'p', 'p:let @"=@0<CR>', { silent = true })
 
 map('n', '<C-s>', '<cmd>w<CR>', { desc = 'file save' })
