@@ -1,6 +1,7 @@
 return {
   'andweeb/presence.nvim',
   event = 'BufReadPre',
+  enabled = false,
   config = function()
     require('presence').setup {
       log_level = nil,
