@@ -163,9 +163,9 @@ return {
       local servers = {
         clangd = {},
         cssls = {},
-        nil_ls = {},
         ruff = {},
         jdtls = {},
+        kotlin_language_server = {},
         ts_ls = {},
         -- gopls = {},
         pyright = {},
