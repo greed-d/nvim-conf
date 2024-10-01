@@ -19,7 +19,7 @@ return {
       desc = '[M]ark [L]ist',
     },
     {
-      'mq',
+      '<C-j>',
       function()
         require('harpoon.ui').nav_file(1)
       end,
@@ -27,21 +27,21 @@ return {
       desc = 'Move to 1st file in list',
     },
     {
-      'mw',
+      '<C-k>',
       function()
         require('harpoon.ui').nav_file(2)
       end,
       desc = 'Move to 2nd file in list',
     },
     {
-      'me',
+      '<C-l>',
       function()
         require('harpoon.ui').nav_file(3)
       end,
       desc = 'Move to 3rd file in list',
     },
     {
-      'mr',
+      '<C-;>',
       function()
         require('harpoon.ui').nav_file(4)
       end,
