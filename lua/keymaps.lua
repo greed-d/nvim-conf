@@ -21,8 +21,8 @@ map({ 'n', 'v', 'x' }, '<leader>Y', '"+yy', { noremap = true, silent = true, des
 map({ 'n', 'v', 'x' }, '<leader>p', '"+p', { noremap = true, silent = true, desc = 'Paste from clipboard' })
 map({ 'n', 'x' }, 'j', "v:count == 0 ? 'gj' : 'j'", { desc = 'Down', expr = true, silent = true })
 map({ 'n', 'x' }, 'k', "v:count == 0 ? 'gk' : 'k'", { desc = 'Up', expr = true, silent = true })
-map({'v', 'n'}, '<', '<gv')
-map({'v', 'n'}, '>', '>gv')
+map({ 'v', 'n' }, '<', '<gv')
+map({ 'v', 'n' }, '>', '>gv')
 map('x', 'p', 'p:let @"=@0<CR>', { silent = true })
 
 map('n', '<C-s>', '<cmd>w<CR>', { desc = 'file save' })
@@ -44,6 +44,7 @@ map('n', '<leader>tf', '<cmd>tabnew %<CR>', { desc = 'Open current buffer in new
 map('n', '<leader>sa', '<cmd>Telescope find_files follow=true no_ignore=true hidden=true<CR>', { desc = 'telescope [S]earch [A]ll files' })
 map('n', '<leader>o', '<cmd>Oil<CR>', { desc = 'Toggle [O]il' })
 map('n', '<leader>bk', '<cmd>bdelete<CR>', { desc = 'close buffers' })
+map('n', '<leader>bn', '<cmd>enew<CR>', { desc = 'close buffers' })
 
 -- NOTE: Terminal Stuff
 

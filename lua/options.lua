@@ -69,8 +69,7 @@ g['loaded_ruby_provider'] = 0
 g.neovide_text_gamma = 1.2
 g.neovide_text_contrast = 0.2
 
-o.guifont = 'JetBrainsMono Nerd Font:h12'
-g.neovide_theme = 'tokyodark'
+o.guifont = 'JetBrainsMono Nerd Font:h13'
 g.neovide_cursor_animation_length = 0.07
 g.neovide_cursor_animate_in_insert_mode = true
 
