@@ -21,7 +21,7 @@ return {
   -- end
   opts = {
     options = {
-      theme = 'catppuccin-mocha',
+      theme = 'nordic',
       component_separators = { right = '', left = '' },
       section_separators = { right = '', left = '' },
       globalstatus = true,

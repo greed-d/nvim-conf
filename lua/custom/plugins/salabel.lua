@@ -8,4 +8,5 @@ return {
   config = function()
     require('tiny-code-action').setup()
   end,
+  enabled = false,
 }

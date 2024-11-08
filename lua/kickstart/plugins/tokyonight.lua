@@ -21,14 +21,12 @@ return {
   priority = 1000,
   opts = {},
   enabled = false,
-  
+
   config = function()
     vim.cmd.colorscheme 'tokyonight-night'
-    vim.api.nvim_set_hl(0, "GitSignsDelete", { fg = '#f7768e'})
-    vim.api.nvim_set_hl(0, "GitSignsAdd", { fg = '#9ece6a'})
-
-
-  end
+    vim.api.nvim_set_hl(0, 'GitSignsDelete', { fg = '#f7768e' })
+    vim.api.nvim_set_hl(0, 'GitSignsAdd', { fg = '#9ece6a' })
+  end,
 }
 -- Using lazy.nvim
 -- return {

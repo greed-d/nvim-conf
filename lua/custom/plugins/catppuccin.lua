@@ -9,4 +9,5 @@ return {
     vim.api.nvim_set_hl(0, 'GitSignsDelete', { fg = '#f38ba8' })
     vim.api.nvim_set_hl(0, 'GitSignsAdd', { fg = '#a6e3a1' })
   end,
+  enabled = false,
 }

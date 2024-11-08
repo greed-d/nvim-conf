@@ -72,6 +72,7 @@ g.neovide_text_contrast = 0.2
 o.guifont = 'JetBrainsMono Nerd Font:h13'
 g.neovide_cursor_animation_length = 0.07
 g.neovide_cursor_animate_in_insert_mode = true
+g.neovide_scale_factor = 1.0
 
 g.neovide_cursor_animate_command_line = true
 g.neovide_cursor_vfx_mode = 'pixiedust'
