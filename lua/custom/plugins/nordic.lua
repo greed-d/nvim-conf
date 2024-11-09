@@ -42,6 +42,7 @@ return {
         highlights.TelescopePreviewTitle = {
           fg = palette.black0,
           bg = palette.blue1,
+
           -- italic = true,
           bold = false,
           underline = false,
@@ -58,8 +59,26 @@ return {
           undercurl = false,
         }
         highlights.TelescopeSelectionCaret = {
-          fg = palette.yellow.bright,
+          fg = palette.gray1,
           bg = palette.gray1,
+          -- italic = true,
+          bold = false,
+          underline = false,
+          -- sp = palette.yellow.dim,
+          undercurl = false,
+        }
+        highlights.TelescopePromptBorder = {
+          fg = palette.black2,
+          bg = palette.black2,
+          -- italic = true,
+          bold = false,
+          underline = false,
+          -- sp = palette.yellow.dim,
+          undercurl = false,
+        }
+        highlights.TelescopeResultsBorder = {
+          fg = palette.black1,
+          bg = palette.black1,
           -- italic = true,
           bold = false,
           underline = false,
@@ -68,7 +87,7 @@ return {
         }
       end,
       -- Enable brighter float border.
-      bright_border = false,
+      bright_border = true,
       -- Reduce the overall amount of blue in the theme (diverges from base Nord).
       reduced_blue = true,
       -- Swap the dark background with the normal one.

@@ -4,7 +4,7 @@
 -- See the kickstart.nvim README for more information
 return {
   {
-   'max397574/better-escape.nvim',
+    'max397574/better-escape.nvim',
     event = 'InsertEnter',
     config = function()
       -- lua, default settings
@@ -42,9 +42,20 @@ return {
 
   {
     'nvim-lualine/lualine.nvim',
-    setup = true;
-  }
+    setup = true,
+  },
 
-  
-
+  {
+    'leath-dub/snipe.nvim',
+    keys = {
+      {
+        '<leader>L',
+        function()
+          require('snipe').open_buffer_menu()
+        end,
+        desc = 'Open Snipe buffer menu',
+      },
+    },
+    opts = {},
+  },
 }
