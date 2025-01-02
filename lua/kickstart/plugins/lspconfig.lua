@@ -167,8 +167,21 @@ return {
         jdtls = {},
         kotlin_language_server = {},
         ts_ls = {},
+        jsonls = {},
         -- gopls = {},
-        pyright = {},
+        pyright = {
+          settings = {
+            pyright = {
+              disableOrganizeImports = true, -- Using Ruff
+            },
+            python = {
+              analysis = {
+                ignore = { '*' }, -- Using Ruff
+                typeCheckingMode = 'off', -- Using mypy
+              },
+            },
+          },
+        },
         bashls = {},
         emmet_ls = {},
         taplo = {},

@@ -2,7 +2,7 @@ return {
   'nvim-lualine/lualine.nvim',
 
   dependencies = {
-    'nvim-tree/nvim-web-devicons',
+    'DaikyXendo/nvim-material-icon',
     'greed-d/lualine-so-fancy.nvim',
   },
   event = 'VeryLazy',
@@ -21,7 +21,7 @@ return {
   -- end
   opts = {
     options = {
-      theme = 'nordic',
+      theme = 'catppuccin-mocha',
       component_separators = { right = '', left = '' },
       section_separators = { right = '', left = '' },
       globalstatus = true,

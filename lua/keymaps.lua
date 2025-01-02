@@ -42,8 +42,8 @@ map('n', '<leader>tp', '<cmd>tabp<CR>', { desc = 'Go to previous tab' }) --  go 
 map('n', '<leader>tf', '<cmd>tabnew %<CR>', { desc = 'Open current buffer in new tab' }) --  move current buffer to new tab
 
 map('n', '<leader>sa', '<cmd>Telescope find_files follow=true no_ignore=true hidden=true<CR>', { desc = 'telescope [S]earch [A]ll files' })
-map('n', '<leader>o', '<cmd>Oil<CR>', { desc = 'Toggle [O]il' })
-map('n', '<leader>bk', '<cmd>bdelete<CR>', { desc = 'close buffers' })
+map('n', '-', '<cmd>Oil<CR>', { desc = 'Toggle [O]il' })
+-- map('n', '<leader>bk', '<cmd>bdelete<CR>', { desc = 'close buffers' })
 map('n', '<leader>bn', '<cmd>enew<CR>', { desc = 'close buffers' })
 
 -- NOTE: Terminal Stuff
@@ -93,6 +93,7 @@ end, { desc = 'Show floating terminal' })
 vim.opt.hlsearch = true
 
 map({ 'n', 'v', 't' }, '\\', '<cmd>Neotree toggle<CR>', { desc = 'Toggle neo-tree' })
+map('n', '<leader>fm', '<cmd>Neotree focus<CR>', { desc = 'Focus neotree' })
 
 -- NOTE: Diagnostic keymaps
 

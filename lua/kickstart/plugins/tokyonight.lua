@@ -23,7 +23,7 @@ return {
   enabled = false,
 
   config = function()
-    vim.cmd.colorscheme 'tokyonight-night'
+    vim.cmd.colorscheme 'tokyonight-day'
     vim.api.nvim_set_hl(0, 'GitSignsDelete', { fg = '#f7768e' })
     vim.api.nvim_set_hl(0, 'GitSignsAdd', { fg = '#9ece6a' })
   end,

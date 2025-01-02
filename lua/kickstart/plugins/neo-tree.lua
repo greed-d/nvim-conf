@@ -6,7 +6,7 @@ return {
   version = '*',
   dependencies = {
     'nvim-lua/plenary.nvim',
-    'nvim-tree/nvim-web-devicons', -- not strictly required, but recommended
+    'DaikyXendo/nvim-material-icon', -- not strictly required, but recommended
     'MunifTanjim/nui.nvim',
   },
   cmd = 'Neotree',
@@ -16,6 +16,7 @@ return {
       name = { use_git_status_colors = false },
       window = {
         position = 'right',
+        width = 30,
       },
       git_status = {
         symbols = {

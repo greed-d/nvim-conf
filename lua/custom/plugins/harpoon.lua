@@ -41,7 +41,7 @@ return {
       desc = 'Move to 3rd file in list',
     },
     {
-      '<C-;>',
+      '<C-h>',
       function()
         require('harpoon.ui').nav_file(4)
       end,

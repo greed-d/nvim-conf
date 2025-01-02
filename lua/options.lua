@@ -66,13 +66,18 @@ g['loaded_ruby_provider'] = 0
 
 -- NOTE: Neovide related settings below
 
-g.neovide_text_gamma = 1.2
-g.neovide_text_contrast = 0.2
+-- g.neovide_text_gamma = 1.4
+-- g.neovide_text_contrast = 0.3
 
 o.guifont = 'JetBrainsMono Nerd Font:h13'
 g.neovide_cursor_animation_length = 0.07
 g.neovide_cursor_animate_in_insert_mode = true
 g.neovide_scale_factor = 1.0
+
+vim.g.neovide_padding_top = 10
+vim.g.neovide_padding_bottom = 10
+vim.g.neovide_padding_right = 10
+vim.g.neovide_padding_left = 10
 
 g.neovide_cursor_animate_command_line = true
 g.neovide_cursor_vfx_mode = 'pixiedust'

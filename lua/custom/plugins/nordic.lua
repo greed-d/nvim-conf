@@ -123,5 +123,5 @@ return {
     }
     require('nordic').load()
   end,
-  enabled = true,
+  enabled = false,
 }
