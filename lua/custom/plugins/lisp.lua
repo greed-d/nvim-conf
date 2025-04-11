@@ -11,4 +11,4 @@ local function _1_()
   }
   return nil
 end
-return { 'monkoose/nvlime', dependencies = { 'monkoose/parsley' }, ft = { 'lisp' }, init = _1_ }
+return { 'monkoose/nvlime', dependencies = { 'monkoose/parsley' }, ft = { 'lisp' }, enabled = false, init = _1_ }

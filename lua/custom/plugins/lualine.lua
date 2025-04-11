@@ -61,7 +61,7 @@ return {
         { 'fancy_lsp_servers' },
       },
       lualine_y = {
-        { 'fancy_macro', separator = { left = '', right = '' } },
+        { 'fancy_macro', fg = '#474853', bg = '#ee6d85', separator = { left = '', right = '' } },
 
         { 'fancy_searchcount', separator = { left = '', right = '' } },
         {

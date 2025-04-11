@@ -16,15 +16,21 @@ map({ 'n', 'v' }, '<', '<gv', { desc = 'Move indent left once' })
 map({ 'n', 'v' }, '>', '>gv', { desc = 'Move indent left once' })
 map({ 'n', 'v', 't', 'x' }, '<A-,>', '<C-w><', { desc = 'Decrease window size' })
 map({ 'n', 'v', 't', 'x' }, '<A-.>', '<C-w>>', { desc = 'Move indent left once' })
-map({ 'n', 'v', 'x' }, '<leader>y', '"+y', { noremap = true, silent = true, desc = 'Yank to clipboard' })
-map({ 'n', 'v', 'x' }, '<leader>Y', '"+yy', { noremap = true, silent = true, desc = 'Yank line to clipboard' })
-map({ 'n', 'v', 'x' }, '<leader>p', '"+p', { noremap = true, silent = true, desc = 'Paste from clipboard' })
+
+map('n', '<C-d>', '<C-d>zz', { desc = 'Scroll half page down and center screen' })
+map('n', '<C-u>', '<C-u>zz', { desc = 'Scroll half page up and center screen' })
+-- map({ 'n', 'v', 'x' }, '<leader>y', '"+y', { noremap = true, silent = true, desc = 'Yank to clipboard' })
+-- map({ 'n', 'v', 'x' }, '<leader>Y', '"+yy', { noremap = true, silent = true, desc = 'Yank line to clipboard' })
+-- map({ 'n', 'v', 'x' }, '<leader>p', '"+p', { noremap = true, silent = true, desc = 'Paste from clipboard' })
+--
 map({ 'n', 'x' }, 'j', "v:count == 0 ? 'gj' : 'j'", { desc = 'Down', expr = true, silent = true })
 map({ 'n', 'x' }, 'k', "v:count == 0 ? 'gk' : 'k'", { desc = 'Up', expr = true, silent = true })
 map({ 'v', 'n' }, '<', '<gv')
 map({ 'v', 'n' }, '>', '>gv')
-map('x', 'p', 'p:let @"=@0<CR>', { silent = true })
 
+map('x', 'p', 'p:let @"=@0<CR>', { silent = true })
+map('n', '<CR>', 'o<Esc>', { desc = 'Add new line below' })
+map('n', '<S-CR>', 'O<Esc>', { desc = 'Add new line below' })
 map('n', '<C-s>', '<cmd>w<CR>', { desc = 'file save' })
 map('n', '<C-c>', '<cmd>%y+<CR>', { desc = 'file copy whole' })
 
@@ -32,7 +38,6 @@ map('n', '<C-c>', '<cmd>%y+<CR>', { desc = 'file copy whole' })
 
 map({ 'n', 'v' }, '<Tab>', '<cmd>BufferLineCycleNext<CR>', { desc = 'Move indent left once' })
 map({ 'n', 'v' }, '<S-Tab>', '<cmd>BufferLineCyclePrev<CR>', { desc = 'Move indent left once' })
-map('n', '<leader>b', '<cmd>enew<CR>', { desc = 'buffer new' })
 
 map('n', '<Esc>', '<cmd>nohlsearch<CR>')
 map('n', '<leader>to', '<cmd>tabnew<CR>', { desc = 'Open new tab' }) -- open new tab
@@ -96,7 +101,6 @@ map({ 'n', 'v', 't' }, '\\', '<cmd>Neotree toggle<CR>', { desc = 'Toggle neo-tre
 map('n', '<leader>fm', '<cmd>Neotree focus<CR>', { desc = 'Focus neotree' })
 
 -- NOTE: Diagnostic keymaps
-
 vim.keymap.set('n', '[d', vim.diagnostic.goto_prev, { desc = 'Go to previous [D]iagnostic message' })
 vim.keymap.set('n', ']d', vim.diagnostic.goto_next, { desc = 'Go to next [D]iagnostic message' })
 vim.keymap.set('n', '<leader>e', vim.diagnostic.open_float, { desc = 'Show diagnostic [E]rror messages' })

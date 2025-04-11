@@ -167,6 +167,7 @@ return {
         jdtls = {},
         kotlin_language_server = {},
         ts_ls = {},
+        marksman = {},
         jsonls = {},
         -- gopls = {},
         pyright = {
@@ -183,6 +184,7 @@ return {
           },
         },
         bashls = {},
+        hyprls = {},
         emmet_ls = {},
         taplo = {},
         -- rust_analyzer = {},

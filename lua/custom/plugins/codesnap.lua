@@ -3,4 +3,5 @@ return {
   build = 'make',
   cmd = 'CodeSnap',
   config = true,
+  enabled = false,
 }

@@ -55,7 +55,7 @@ return {
         },
       },
 
-      preset = 'modern',
+      preset = 'helix',
       -- Document existing key chains
       spec = {
         { '<leader>c', group = '[C]ode', mode = { 'n', 'x' } },

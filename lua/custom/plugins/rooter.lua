@@ -1,12 +1,16 @@
 -- Lua
 return {
-  'ahmedkhalf/project.nvim',
-  event = 'User FilePost',
-  config = function()
-    require('project_nvim').setup {
-      -- your configuration comes here
-      -- or leave it empty to use the default settings
-      -- refer to the configuration section below
-    }
-  end,
+  'https://gitlab.com/Biggybi/nvim-smartcd.git',
+  opts = {},
+  event = { 'BufEnter', 'BufRead' },
+  -- optional (only makes sense if 'create_cmd' is true)
+  cmd = 'SmartCd',
+  -- optional (only makes sense if 'create_keymap' is true)
+  keys = {
+    {
+      '<leader>cd',
+      '<cmd>SmartCd<CR>',
+      desc = 'SmartCd',
+    },
+  },
 }

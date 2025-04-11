@@ -6,5 +6,6 @@ return {
     config = function()
       require('live-server').setup(opts)
     end,
+    enabled = false,
   },
 }

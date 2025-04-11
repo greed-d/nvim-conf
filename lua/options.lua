@@ -9,12 +9,14 @@ local g = vim.g
 vim.g.loaded_netrw = 1
 vim.g.loaded_netrwPlugin = 1
 
+vim.opt_local.formatoptions:remove { 'r', 'o', 'c' } -- Stop neovim from adding comments to new line
+
 vim.g.laststatus = 3
 o.showmode = false
-o.scrolloff = 20
+o.scrolloff = 21
 o.background = 'dark'
 
--- o.clipboard = 'unnamedplus'
+o.clipboard = 'unnamedplus'
 o.cursorline = true
 o.cursorlineopt = 'both'
 
@@ -74,10 +76,10 @@ g.neovide_cursor_animation_length = 0.07
 g.neovide_cursor_animate_in_insert_mode = true
 g.neovide_scale_factor = 1.0
 
-vim.g.neovide_padding_top = 10
-vim.g.neovide_padding_bottom = 10
-vim.g.neovide_padding_right = 10
-vim.g.neovide_padding_left = 10
+g.neovide_padding_top = 10
+g.neovide_padding_bottom = 10
+g.neovide_padding_right = 10
+g.neovide_padding_left = 10
 
 g.neovide_cursor_animate_command_line = true
 g.neovide_cursor_vfx_mode = 'pixiedust'

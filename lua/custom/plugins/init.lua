@@ -6,6 +6,7 @@ return {
   {
     'max397574/better-escape.nvim',
     event = 'InsertEnter',
+    enabled = false,
     config = function()
       -- lua, default settings
       require('better_escape').setup {
